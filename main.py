@@ -1,3 +1,4 @@
+# main.py
 from fastapi import FastAPI
 from scraper import get_stock_data
 from typing import List, Dict
