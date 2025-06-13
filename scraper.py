@@ -11,16 +11,23 @@ def get_stock_data():
     if not table:
         return []
 
-    rows = table.find_all("tr")[1:]  # نتجاهل صف الرأس
+    rows = table.find_all("tr")[1:]  # نتجاهل العنوان
 
     for row in rows:
         cols = row.find_all("td")
-        if len(cols) >= 5:  # نفترض أن السعر في العمود الخامس (تأكد من الصفحة)
-            company = cols[0].text.strip()
-            price = cols[4].text.strip()  # عمود السعر
+        if len(cols) >= 12:  # عدد الأعمدة الكلي
             data.append({
-                "company": company,
-                "price": price
+                "company": cols[0].text.strip(),
+                "symbol": cols[1].text.strip(),
+                "price_open": cols[2].text.strip(),
+                "price_close": cols[3].text.strip(),
+                "change_percent": cols[4].text.strip(),
+                "monthly_change": cols[5].text.strip(),
+                "yearly_change": cols[6].text.strip(),
+                "pe_ratio": cols[7].text.strip(),
+                "net_yield": cols[8].text.strip(),
+                "volume": cols[9].text.strip(),
+                "turnover": cols[10].text.strip()
             })
 
     return data
