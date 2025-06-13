@@ -1,12 +1,8 @@
 # DZ Bourse API
 
-واجهة برمجية لاستخراج بيانات سوق الأوراق المالية الجزائرية من موقع [sgbv.dz](https://www.sgbv.dz/).
+مشروع API بسيط يستخدم FastAPI لجلب بيانات الأسهم من موقع SGBV الجزائرية.
 
-## Endpoint
-`GET /api/stocks` - تُعيد قائمة الشركات والأسهم.
-
-## تشغيل محلي
-```bash
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
+- المطوّر: Saoura08
+- Endpoint: `/api/stocks`
+- التقنية: Python, FastAPI, BeautifulSoup
+- النشر: Render.com
