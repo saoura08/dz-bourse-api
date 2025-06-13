@@ -1,5 +1,5 @@
 fastapi
 uvicorn
+gunicorn
 beautifulsoup4
 requests
-gunicorn
